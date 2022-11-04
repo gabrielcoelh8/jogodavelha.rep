@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Jogo da Velha</title>
+</head>
+
+<body>
+    <div class="placar">
+        <div class="labels">
+        <span id="lbl-x">P1</span>
+        <span id="lbl-o">P2</span>
+        </div>
+        <div class="pontos">
+        <span id="pts-x">00</span>
+        <span id="pts-o">00</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="start">
+            <div>
+                <span class="text">Click anywhere in the table to begins the game!
+                </span>
+            </div>
+        </div>
+        <div>
+            <table class="tab">
+                <tr>
+                    <th>
+                        <div class="cel 11">
+                            <div class="form x"></div>
+                            <!--<div class="form xx"></div>-->
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 12">
+                            <div class="form o"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 13">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="cel 21">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 22">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 23">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="cel 31">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 32">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="cel 33">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="side">
+
+    <div class="music">
+        <div class="about">
+            <div class="cover">
+                <img src="covers/1.jpg" alt="">
+            </div>
+            <div class="details">
+                <span class="song">6. Sonata in C#</span>
+                <span class="album">Betthoven</span>
+            </div>
+        </div>
+        <div class="progress">
+            <span id="bar"></span>
+            <span class="timer">00:00</span>
+        </div>
+        <div class="btns">
+            <span class="material-symbols-outlined">queue_music</span>
+            <span class="material-symbols-outlined">skip_previous</span>
+            <span class="material-symbols-outlined">play_circle</span>
+            <span class="material-symbols-outlined">skip_next</span>
+            <span class="material-symbols-outlined">volume_up</span>
+        </div>
+    </div>
+
+    <div class="music-list">
+        <div class="conf">
+            <span class="material-symbols-outlined">shuffle</span>
+            <span class="material-symbols-outlined">close</span>
+        </div>
+        <div class="list">
+            <ul>
+                <li>
+                    <div class="songli">
+                        <div class="song-info">
+                            <span>Nome da música</span>
+                            <p>Artista</p>
+                        </div>
+                        <div class="status">
+                            <span>Playing</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="songli">
+                        <div class="song-info">
+                            <span>Nome da música</span>
+                            <p>Artista</p>
+                        </div>
+                        <div class="status">
+                            <span>0:00</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    </div>
+</body>
+</html>

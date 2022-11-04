@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --pink: #ff74a4;
+    --violet: #9f6ea3;
+    --back-cel: rgba(255, 227, 194, 0.5);
+    --linear1: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+    --ow: 3.5em;
+    --xw: 4em;
+}
+
+/*
+tab
+*/
+
+th div.cel {
+    min-width: 100px;
+    min-height: 100px;
+    background-color:rgba(255, 227, 194, 0.5);
+}
+
+/*
+content
+*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, var(--pink) 0%, var(--violet) 100%);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    font-family: 'Poor Story', cursive;
+}
+
+.start {
+    color: #faa1c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 13vh;
+    font-size: 2.5em;
+}
+.placar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 5vh;
+    font-size: 1em;
+    font-family: 'Press Start 2P', cursive;
+}
+.pontos, .labels {
+    min-width: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.placar .pontos{
+    background-image: linear-gradient(to bottom, var(--pink) 0%, var(--back-cel) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+.placar .labels{
+    color: var(--back-cel);
+}
+
+/*
+cells
+*/
+
+.cel .form.x{
+    position: relative;
+    height: var(--xw); 
+    width: var(--xw); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form.x::before,
+.form.x::after {
+    position: absolute;
+    content: '';
+    width: var(--xw);
+    height: 6px;
+    background: linear-gradient(to right, var(--pink) 0%, var(--violet) 100%);
+}
+.form.x::before{
+    transform: rotate(45deg);
+}
+.form.x::after{
+    transform: rotate(-45deg);
+}
+
+/*
+old ver. (2 div's)
+
+.form.x, .form.xx {
+    content: "";
+    background: var(--linear1);
+    height: 70px;
+    width: 6px;
+    border-radius: 3px;
+    position: absolute;
+}
+.form.x {
+    transform: rotate(45deg);
+}
+.form.xx{
+    transform: rotate(-45deg);
+}*/
+
+.cel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.form.o {
+    background: linear-gradient(var(--back-cel), var(--back-cel)) padding-box, 
+                /*background color perfaking*/
+                linear-gradient(to right, var(--pink), var(--violet)) border-box;
+                /*border color*/
+    border-radius: 50%;
+    border: 6px solid transparent;
+    height: var(--ow);
+    width: var(--ow);
+}
+
+/*
+other method for gradient border (when square only)
+
+.element {
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    border-radius: 50em;  
+}
+*/
+
+/*
+music
+*/
+.side{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+img {
+    width: 7vh;
+    border-radius: 6px;
+    opacity: 0.75;
+}
+.music{
+    margin: 10px 10px 0px 10px;
+    width: 20vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.details{
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: auto;
+    color: #91058a;
+}
+.progress {
+    width: 20vh;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.cover, .progress, .btns{
+    display: flex;
+    flex-direction: row;
+}
+.cover{
+    justify-content: flex-start;
+}
+.progress, .btns{
+    justify-content: space-around;
+    align-items: center;
+}
+.btns span {
+    font-size: 27px;
+    cursor: pointer;
+    background: linear-gradient(to right, #7e0378, var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btns span:nth-child(3n){
+    font-size: 35px;
+}
+#bar{
+    content: "";
+    width: 100%;
+    height: 8px;
+    border-radius: 15px;
+    background: var(--back-cel);
+}
+
+.timer {
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-top: 2px;
+    color:#7e0378;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+/*
+submenu - musiclist
+*/
+.music-list{
+    background-color: rgba(255, 227, 194, 0.2);
+    border-radius: 8px;
+    padding: 5px;
+    height: fit-content;
+    margin: 0px 10px 10px 10px;
+}
+.music-list .conf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.music-list .conf span{
+    font-size: 22px;
+    cursor: pointer;
+    color: #7e0378;
+}
+.music-list ul{
+    list-style-type: none;
+}
+.music-list li{
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 5px;
+    border-radius: 9px;
+    color: var(--back-cel);
+    background: linear-gradient(to right, #7e03787a, var(--violet));
+    font-size: 0.75em;
+    padding: 6px;
+    height: fit-content;
+}
+.songli {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.song-info, .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
