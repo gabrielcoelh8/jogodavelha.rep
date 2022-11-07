@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
     <div class="placar">
         <div class="labels">
         <span id="lbl-x">P1</span>
@@ -87,8 +88,7 @@
         </div>
     </div>
 
-    <div class="side">
-
+<div class="side">
     <div class="music">
         <div class="about">
             <div class="cover">
@@ -100,11 +100,14 @@
             </div>
         </div>
         <div class="progress">
+            <div class="line">
             <span id="bar"></span>
+            <span id="circle"></span>
+            </div>
             <span class="timer">00:00</span>
         </div>
         <div class="btns">
-            <span class="material-symbols-outlined">queue_music</span>
+            <span id="btnqueue" class="material-symbols-outlined">queue_music</span>
             <span class="material-symbols-outlined">skip_previous</span>
             <span class="material-symbols-outlined">play_circle</span>
             <span class="material-symbols-outlined">skip_next</span>
@@ -115,8 +118,9 @@
     <div class="music-list">
         <div class="conf">
             <span class="material-symbols-outlined">shuffle</span>
-            <span class="material-symbols-outlined">close</span>
+            <span id="close" class="material-symbols-outlined">close</span>
         </div>
+
         <div class="list">
             <ul>
                 <li>
@@ -141,10 +145,11 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+                </ul>
+            </div>
         </div>
     </div>
-    
-    </div>
+</div>
+<script src="script/script.js"></script>
 </body>
 </html>
