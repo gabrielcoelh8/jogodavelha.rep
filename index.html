@@ -16,10 +16,12 @@
         <div class="labels">
         <span id="lbl-x">P1</span>
         <span id="lbl-o">P2</span>
+        <span id="lbl-d">--</span>
         </div>
         <div class="pontos">
         <span id="pts-x">00</span>
         <span id="pts-o">00</span>
+        <span id="pts-d">00</span>
         </div>
     </div>
 
@@ -34,52 +36,51 @@
             <table class="tab">
                 <tr>
                     <th>
-                        <div class="cel 11">
+                        <div id="11" class="cel">
                             <div class="form x"></div>
-                            <!--<div class="form xx"></div>-->
                         </div>
                     </th>
                     <th>
-                        <div class="cel 12">
+                        <div id="12" class="cel">
                             <div class="form o"></div>
                         </div>
                     </th>
                     <th>
-                        <div class="cel 13">
+                        <div id="13" class="cel">
+                            <div class="form x"></div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div id="21" class="cel">
+                            <div class="form o"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div id="22" class="cel">
+                            <div class="form"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <div id="23" class="cel">
                             <div class="form"></div>
                         </div>
                     </th>
                 </tr>
                 <tr>
                     <th>
-                        <div class="cel 21">
+                        <div id="31" class="cel">
                             <div class="form"></div>
                         </div>
                     </th>
                     <th>
-                        <div class="cel 22">
+                        <div id="32" class="cel">
                             <div class="form"></div>
                         </div>
                     </th>
                     <th>
-                        <div class="cel 23">
-                            <div class="form"></div>
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <div class="cel 31">
-                            <div class="form"></div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="cel 32">
-                            <div class="form"></div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="cel 33">
+                        <div id="33" class="cel">
                             <div class="form"></div>
                         </div>
                     </th>
@@ -95,23 +96,35 @@
                 <img src="covers/1.jpg" alt="">
             </div>
             <div class="details">
-                <span class="song">6. Sonata in C#</span>
-                <span class="album">Betthoven</span>
+                <span class="song">6º Sonata in C#</span>
+                <span class="artist">Nome do Artista</span>
             </div>
         </div>
-        <div class="progress">
-            <div class="line">
-            <span id="bar"></span>
-            <span id="circle"></span>
+
+        <div class="box-progress">
+            <div class="time-current">
+                <span class="current">0:00</span>
             </div>
-            <span class="timer">00:00</span>
+            <div class="progress">
+                <div class="line">
+                    <audio id="" src=""></audio>
+                </div>
+            </div>
+            <div class="time-final">
+                <span class="final">5:00</span>
+            </div>
         </div>
+        
+
         <div class="btns">
             <span id="btnqueue" class="material-symbols-outlined">queue_music</span>
             <span class="material-symbols-outlined">skip_previous</span>
             <span class="material-symbols-outlined">play_circle</span>
             <span class="material-symbols-outlined">skip_next</span>
             <span class="material-symbols-outlined">volume_up</span>
+            <div class="volume">
+                <div class="volume-line"></div>
+            </div>
         </div>
     </div>
 
