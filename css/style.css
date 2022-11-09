@@ -1,31 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 :root {
-    --pink: #ff74a4;
+    --pink: rgb(255, 117, 165);
     --violet: #9f6ea3;
     --back-cel: rgba(255, 227, 194, 0.5);
     --linear1: linear-gradient(var(--pink) 0%, var(--violet) 100%);
     --ow: 3.5em;
     --xw: 4em;
 }
-
 /*
 tab
 */
-
 th div.cel {
     min-width: 100px;
     min-height: 100px;
     background-color:rgba(255, 227, 194, 0.5);
 }
-
+/*
+pop-up
+*/
+.popup {
+    position: fixed;
+    width: 350px;
+    height: 200px;
+    background-color: rgba(255, 117, 165, 0.3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poor Story', cursive;
+    font-size: 2em;
+    color: rgba(240, 248, 255, 0.5);
+    border: 0.1px solid rgba(255, 255, 255, 0.5);
+}
+.btns-pop{
+    margin-top: 15px;
+}
+.btns-pop button{
+    font-size: 1em;
+    background-color: var(--back-cel);
+    border: 1px solid white;
+    color: var(--pink);
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.btns-pop button:hover {
+    filter: brightness(150%);
+    color: #7e0378;
+}
+body.show .popup{
+    display: none; /*visivel*/
+}
+body .wrapper div{
+    /*add efeito aos childs, caso contrário position:fixed não funcionará*/
+    filter: blur(18px);
+    -webkit-filter: blur(18px);
+    transition: 0.3s filter linear;
+    -webkit-transition: 0.3s -webkit-filter linear;
+}
+body.show .wrapper div{
+    /*fim da transição*/ 
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
 /*
 content
 */
@@ -34,9 +83,9 @@ body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(to top, var(--pink) 0%, var(--violet) 100%);
-    height: 65rem;
+    height: 100vh;
+    width: 100%;
 }
-
 .container {
     display: flex;
     justify-content: space-around;
@@ -45,7 +94,6 @@ body{
     height: 50vh;
     font-family: 'Poor Story', cursive;
 }
-
 .start {
     color: #faa1c0;
     display: flex;
@@ -84,11 +132,9 @@ body{
 .placar .labels{
     color: var(--back-cel);
 }
-
 /*
 cells
 */
-
 .cel .form.x{
     position: relative;
     height: var(--xw); 
@@ -111,7 +157,6 @@ cells
 .form.x::after{
     transform: rotate(-45deg);
 }
-
 /*
 old ver. (2 div's)
 
@@ -129,7 +174,6 @@ old ver. (2 div's)
 .form.xx{
     transform: rotate(-45deg);
 }*/
-
 .cel {
     display: flex;
     justify-content: center;
@@ -156,7 +200,6 @@ other method for gradient border (when square only)
     border-radius: 50em;  
 }
 */
-
 /*
 music
 */
@@ -183,6 +226,14 @@ img {
     font-family: 'Roboto Condensed', sans-serif;
     top: 100px;
     padding: 5px;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transition: 0.16s filter linear;
+    -webkit-transition: 0.16s -webkit-filter linear;
+}
+.music.show{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
 .about {
     display: flex;
@@ -265,7 +316,6 @@ img {
 .volume:hover .volume-line::before, .volume:hover{
     opacity: 1;
 }
-
  /*
  TO CHANGE PROGRESS BAR
  */
@@ -329,7 +379,7 @@ img {
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 1,
-    'wght' 500,
+    'wght' 800,
     'GRAD' 0,
     'opsz' 48
 }
@@ -337,10 +387,10 @@ img {
 submenu - musiclist
 */
 .music-list{
-    background-color: rgba(255, 227, 194, 0.63);
+    background-color: rgba(255, 227, 194, 0.25);
     border-radius: 8px;
     padding: 5px;
-    height: 3vh;
+    height: 0vh;
     width: 240px;
     margin: 0px 10px 10px 10px;
     opacity: 0;
@@ -360,9 +410,13 @@ submenu - musiclist
     justify-content: space-between;
 }
 .music-list .conf span{
-    font-size: 22px;
+    font-size: 24px;
+    padding: 1px;
     cursor: pointer;
-    color: #7e0378;
+    background: linear-gradient(to left, #7e0378d5, var(--violet));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .music-list ul{
     list-style-type: none;
@@ -379,10 +433,15 @@ submenu - musiclist
     margin: 5px;
     border-radius: 9px;
     color: var(--back-cel);
-    background: linear-gradient(to right, #7e0378d5, var(--violet));
+    background: linear-gradient(to right, #7e0378, var(--violet));
     font-size: 12px;
     padding: 6px;
     height: fit-content;
+    transition: background 1.5s;
+    will-change: background;
+}
+.music-list li:hover{
+    background: #7e0378d5;
 }
 .songli {
     height: fit-content;
